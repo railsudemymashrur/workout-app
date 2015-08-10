@@ -18,6 +18,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+            <li><%= link_to "My Lounge", user_exercises_path(current_user) %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             <div class="navbar-right">
               <p class="navbar-text">
