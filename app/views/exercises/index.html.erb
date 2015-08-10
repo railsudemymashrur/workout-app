@@ -33,4 +33,5 @@
   <br>
   <% end %>
   <%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-primary link" %>
+  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
 </div>
