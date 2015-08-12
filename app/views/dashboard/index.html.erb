@@ -9,15 +9,16 @@
     <%= will_paginate @athletes, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
   </div>
 </div>
-
-<div class="row">
-  <% @athletes.each do |athlete| %>
-  <div class="col-md-10 well member">
-    <%= athlete.full_name %>
-    <% if current_user %>
-      <%= link_to "Follow", friendships_path(friend_id: athlete.id), method: :post, 
-            class: "btn btn-primary pull-right" unless current_user.follows_or_same?(athlete) %>
+<div class="container">
+  <div class="row">
+    <% @athletes.each do |athlete| %>
+    <div class="col-md-10 well member">
+      <%= athlete.full_name %>
+      <% if current_user %>
+        <%= link_to "Follow", friendships_path(friend_id: athlete.id), method: :post, 
+              class: "btn btn-primary pull-right" unless current_user.follows_or_same?(athlete) %>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <% end %>
 </div>
